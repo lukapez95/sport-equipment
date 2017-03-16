@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-1">
+    <div id="smallImages" ng-repeat="img in itemDetail.imgs" ng-class="{'active': $index == current}" >
+      <img ng-src="{{img}}" alt="{{itemDetail.alt}}" ng-mouseover="setCurrent($index)"/>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div id="product">
+      <img ng-src="{{itemDetail.imgs[current]}}" alt="{{itemDetail.alt}}" />
+    </div>
+  </div>
+
+  <div class="col-md-5">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h4 class="panel-title">{{itemDetail.name}}</h4>
+      </div>
+      <div class="panel-body" id="itemPanel">
+        <h4><b>Price: &nbsp;</b>{{itemDetail.price | currency: "€"}}</h4>
+        <h4><b>Brand: &nbsp;</b>{{itemDetail.brand}}</h4>
+        <h5><b>Color: &nbsp;</b>{{itemDetail.color}}</h5>
+        <div id="colors" ng-repeat="color in itemDetail.colors" style="background-color:{{color.color}}" ng-click="goToDetails(color)" ng-class="{'active':itemDetail.id == color.id}">
+        </div>
+        <h5>Size: </h5>
+        <div id="size" ng-repeat="size in itemDetail.size_full" ng-click="select($index)" ng-class="{'active': $index == selected}">
+          <p>{{size}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Product info</h3>
+      </div>
+      <div class="panel-body" id="itemPanel">
+        {{itemDetail.info}}
+      </div>
+    </div>
+  </div>
+</div>

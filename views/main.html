@@ -1,0 +1,23 @@
+<div id="mainPage">
+  <div id="mainInfo" ng-repeat="sport in allData.sports">
+    <div>
+      <img style="border-radius: 5px;" ng-src="{{sport.mainImg}}" alt="{{sport.alt}}"/>
+    </div>
+    <a ng-click="setSportId(sport)" type="button" class="btn btn-success btn-xs btn-block"><h5>{{sport.title}} - Shop now</h5></a>
+  </div>
+</div>
+
+<div id="footer">
+  <div id="footerNav">
+    <div id="footerInfo" ng-repeat="sport in allData.sports">
+      <a href="" class="navbar-link" ng-click="setSportId(sport)">{{sport.title}}</a>
+    </div>
+    <div id="footerInfo">
+      <a class="navbar-link" href="#!/contact">Contact</a>
+    </div>
+  </div>
+  <hr>
+  <div id="footerEmail">
+    <p>&copy; Luka Pezerovic - info @ luka95.pezerovic@gmail.com</p>
+  </div>
+</div>
