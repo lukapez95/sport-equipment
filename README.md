@@ -6,6 +6,7 @@ Sport equipment
 
 
 ## Setup
+`$ git clone` https://github.com/lukapez95/sport-equipment.git 
 `$ npm install` will install all necessary Node modules
 `$ bower install` will install all necessary Bower packages
 
