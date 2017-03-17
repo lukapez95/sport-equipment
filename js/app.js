@@ -8,10 +8,10 @@ app.config(function($routeProvider){
     templateUrl: 'views/main.html',
     controller: 'MainCtrl'
   })
-  // .when('/sports/:sportTitle', {
-  //   templateUrl: 'views/sports.html',
-  //   controller: 'MainCtrl'
-  // })
+  .when('/sports/:sportTitle', {
+    templateUrl: 'views/sports.html',
+    controller: 'MainCtrl'
+  })
   .when('/sports/:sportTitle', {
     templateUrl: function(params){
       var sportTitle = params.sportTitle;
