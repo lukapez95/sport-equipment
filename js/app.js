@@ -9,10 +9,6 @@ app.config(function($routeProvider){
     controller: 'MainCtrl'
   })
   .when('/sports/:sportTitle', {
-    templateUrl: 'views/sports.html',
-    controller: 'MainCtrl'
-  })
-  .when('/sports/:sportTitle', {
     templateUrl: function(params){
       var sportTitle = params.sportTitle;
       if (sportTitle == 'basketball' || sportTitle == 'football' || sportTitle == 'boxing' || sportTitle == 'tennis' || sportTitle == 'swimming' || sportTitle == 'running') {
