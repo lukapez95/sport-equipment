@@ -7,6 +7,7 @@ function MainCtrl ($scope, $routeParams, $location, dataService) {
   $scope.sportId = '';
   $scope.sportTitle = '';
 
+
   dataService.getData().then(function(data) {
     $scope.allData = data;
   }).catch(function(e) {
@@ -20,6 +21,11 @@ function MainCtrl ($scope, $routeParams, $location, dataService) {
   };
 
   $scope.sportTitle = $routeParams.sportTitle;
+  // console.log($routeParams);
+
+  // if($routeParams.sportTitle !== 'basketball' && $routeParams.sportTitle !== 'football' && $routeParams.sportTitle !== 'boxing' && $routeParams.sportTitle !== 'tennis' && $routeParams.sportTitle !== 'swimming' && $routeParams.sportTitle !== 'running' ) {
+  //   $location.path("/");
+  // }
 
   $scope.setCurrent = function () {
     this.myVal = !this.myVal;
@@ -50,5 +56,5 @@ function MainCtrl ($scope, $routeParams, $location, dataService) {
   $scope.send = function () {
     location.reload();
   };
-  
+
 };

@@ -1,14 +1,26 @@
 var app = angular.module('myApp', ["ngRoute"]);
 
 
+
 app.config(function($routeProvider){
   $routeProvider
   .when('/', {
     templateUrl: 'views/main.html',
     controller: 'MainCtrl'
   })
+  // .when('/sports/:sportTitle', {
+  //   templateUrl: 'views/sports.html',
+  //   controller: 'MainCtrl'
+  // })
   .when('/sports/:sportTitle', {
-    templateUrl: 'views/sports.html',
+    templateUrl: function(params){
+      var sportTitle = params.sportTitle;
+      if (sportTitle == 'basketball' || sportTitle == 'football' || sportTitle == 'boxing' || sportTitle == 'tennis' || sportTitle == 'swimming' || sportTitle == 'running') {
+        return 'views/sports.html'
+      } else {
+        return 'views/main.html'
+      }
+    },
     controller: 'MainCtrl'
   })
   .when('/contact',{
@@ -18,6 +30,9 @@ app.config(function($routeProvider){
   .when('/details/:path/:id',{
     templateUrl: 'views/details.html',
     controller: 'DetailsCtrl'
+  })
+  .otherwise({
+    redirectTo: '/'
   });
 });
 
