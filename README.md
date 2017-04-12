@@ -11,4 +11,5 @@ Sport equipment
 
 
 ## Development
-`$ npm start` to  start the app on 127.0.0.1:8000
+`$ npm build`, `$ node server` to  start the app on 127.0.0.1:3000
+
