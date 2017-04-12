@@ -7,7 +7,7 @@
 /test/tmp/
 
 /component.json
-/bower_components
+public/bower_components
 /test/sample
 !/test/sample/bower.json
 /npm-shrinkwrap.json
